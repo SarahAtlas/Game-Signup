@@ -1,0 +1,26 @@
+﻿@using Classwork___April_16.data
+@model IEnumerable<EventPlayerCount>
+
+
+<div class="container" style="margin-top: 40px;">
+    <h3>Event History</h3>
+    <table class="table table-bordered">
+        <tr>
+            <th>Date</th>
+            <th>PlayerCount</th>
+            <th>Players</th>
+        </tr>
+
+        @foreach (EventPlayerCount epc in Model)
+            {
+            <tr>
+                <td>@epc.Event.Date.ToLongDateString()</td>
+                <td>@epc.PlayerCount/@epc.Event.MaxPlayers</td>
+                <td>
+                    <a href="/Admin/ViewPlayers?Id=@epc.Event.Id">View Players</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

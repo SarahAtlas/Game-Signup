@@ -1,0 +1,32 @@
+﻿@using Classwork___April_16.data
+@using Classwork___April_16.Models
+@model ViewPlayersViewModel
+
+@if (Model.Players.Count() == 0)
+{
+    <h3>There are no players signed up for this Game</h3>
+}
+else
+{
+    <div class="container" style="margin-top: 40px;">
+        <h3>Players for Game on @Model.Event.Date.ToLongDateString()</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+            </tr>
+
+            @foreach (Player player in Model.Players)
+            {
+                <tr>
+                    <td>@player.FirstName</td>
+                    <td>@player.LastName</td>
+                    <td>@player.Email</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+}
+

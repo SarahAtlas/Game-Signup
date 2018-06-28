@@ -1,0 +1,15 @@
+﻿<div class="container" style="margin-top: 40px; display: flex; align-items: center; flex-direction: column; ">
+    <h1>Create New Game</h1>
+    <div class="row">
+        <form action="/Admin/CreateGame" method="post">
+            <input type="date" placeholder="Date" name="date" id="date" class="form-control" />
+            <br />
+            <label for="maxPlayers">Max Players</label> @*make dropdown*@
+            <input type="text" placeholder="Max Players" name="maxPlayers" id="maxPlayers" class="form-control" />
+            <br />
+            <div style="display: flex;
+  align-items: center;
+  justify-content: center;"><button class="btn btn-success">Create Game</button></div> @*disable and enable via javascript when both values filled*@
+        </form>
+    </div>
+</div>
